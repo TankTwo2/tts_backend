@@ -27,7 +27,10 @@ async function test() {
 
 async function saveLog(req) {
   try {
-    rows = await conn.query('INSERT INTO TTS_SAVE_LOG VALUES(?,?,?,?,?,?)', Object.values(req)); // 쿼리 실행
+    rows = await conn.query(
+      'INSERT INTO TTS_SAVE_LOG (chrome_id, cell_type, cell_key, event_type, event_at) VALUES(?,?,?,?,?)',
+      Object.values(req)
+    ); // 쿼리 실행
   } catch (err) {
     throw err;
   } finally {
