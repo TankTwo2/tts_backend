@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "pm2 start ./bin/www ",
+    "kill": "pm2 delete www",
     "dev": "cross-env NODE_ENV=dev nodemon ./bin/www",
     "nodemon": "nodemon"
   },
@@ -16,6 +17,7 @@
     "jade": "~1.11.0",
     "mariadb": "^2.5.2",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "pm2": "^4.5.1"
   }
 }
