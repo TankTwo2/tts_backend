@@ -20,6 +20,7 @@ const whitelist = [
   'http://localhost:3000',
   'chrome-extension://moaddjomgokmlikeanpllanholnbdnpm',
   'chrome-extension://elkiecaobkddkdcdhpphakgknijldeah',
+  'http://192.168.0.6',
 ];
 const corsOptions = {
   origin: function (e, callback) {
