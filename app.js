@@ -22,11 +22,11 @@ const whitelist = [
   'chrome-extension://elkiecaobkddkdcdhpphakgknijldeah',
 ];
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
+  origin: function (e, callback) {
+    if (whitelist.indexOf(e) !== -1) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      callback(new Error(`${e} : Not allowed by CORS`));
     }
   },
   credentials: true,
