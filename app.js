@@ -16,10 +16,21 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
+const whitelist = [
+  'http://localhost:3000',
+  'chrome-extension://moaddjomgokmlikeanpllanholnbdnpm',
+  'chrome-extension://elkiecaobkddkdcdhpphakgknijldeah',
+];
 const corsOptions = {
-  origin: "http://localhost:3000",
-  credentials: true
-}
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+};
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
