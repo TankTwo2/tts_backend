@@ -6,7 +6,8 @@
     "start": "pm2 start ./bin/www ",
     "kill": "pm2 delete www",
     "dev": "cross-env NODE_ENV=dev nodemon ./bin/www",
-    "nodemon": "nodemon"
+    "nodemon": "nodemon",
+    "monit": "pm2 monit"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
