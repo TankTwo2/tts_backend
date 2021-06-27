@@ -17,8 +17,8 @@ app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 const whitelist = [
-  'http://localhost:3000/ttb_frontend',
-  'https://tanktwo2.github.io/ttb_frontend',
+  'http://localhost:3000/',
+  'https://tanktwo2.github.io/',
   'http://192.168.0.6',
 ];
 const corsOptions = {
@@ -31,7 +31,7 @@ const corsOptions = {
   },
   credentials: true,
 };
-app.use(cors(corsOptions));
+app.use(cors({ origin: 'https://tanktwo2.github.io' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
