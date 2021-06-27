@@ -22,11 +22,11 @@ const whitelist = [
   'http://192.168.0.6',
 ];
 const corsOptions = {
-  origin: function (e, callback) {
-    if (whitelist.indexOf(e) !== -1) {
-      callback(null, true);
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
     } else {
-      callback(new Error(`${e} : Not allowed by CORS`));
+      callback(new Error('Not allowed by CORS'))
     }
   },
   credentials: true,
