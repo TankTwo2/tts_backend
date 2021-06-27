@@ -18,8 +18,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 const whitelist = [
   'http://localhost:3000',
-  'chrome-extension://moaddjomgokmlikeanpllanholnbdnpm',
-  'chrome-extension://elkiecaobkddkdcdhpphakgknijldeah',
+  'https://tanktwo2.github.io/ttb_frontend/',
   'http://192.168.0.6',
 ];
 const corsOptions = {
